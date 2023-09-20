@@ -37,17 +37,17 @@ minSdk: 21 / alvo: 33
 ## Tecnologias Utilizadas
 
 ### Linguagem
-- Kotlin
+- Kotlin - Padrão Google
 
 ### Arquitetura
-- MVVM
+- MVVM - Manutenção mais fácil  , mais simples , mais recente.
 
 ### Injeção de Dependência
 Não houve uso , dedido ao tempo (24 Horas)
 
 ### Jetpack
-- dataBinding
-- AppCompatActivity
+- dataBinding - mais utilizado do que viewBinding
+- AppCompatActivity - Default
 
 ## Teste
 Testado no emulador , Motorola Edge 20 - SO 11
