@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AvenueCodeEventos" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.AvenueCodeEventos" parent="Base.Theme.AvenueCodeEventos" />
+
+
+    <style name="Base.Theme.AvenueCodeEvento" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.AvenueCodeEvento" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:colorPrimaryDark" >@color/Avenue</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:navigationBarColor" >@color/Avenue</item>
+
+    </style>
+
+    <style name="Theme.RecyclerViewObjeto" parent="Base.Theme.AvenueCodeEvento" />
+
+</resources>

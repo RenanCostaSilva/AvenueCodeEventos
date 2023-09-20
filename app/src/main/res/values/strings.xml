@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AvenueCodeEventos</string>
+
+    <!-- Detalhe -->
+    <string name="detalhe_evento">Evento</string>
+    <string name="detalhe_descricao">Descrição</string>
+    <string name="detalhe_texto">Texto</string>
+    <string name="detalhe_btn_fazercheckin">Fazer Checkin</string>
+
+    <string name="detalhe_evento_preco">R$ 1.99</string>
+    <string name="detalhe_evento_data">12/01/2023</string>
+
+
+    <!-- Dialog -->
+    <string name="dialog_info">AvenueCode Informação</string>
+    <string name="dialog_edit_nome">Digite seu nome</string>
+    <string name="dialog_edit_email">Digite seu e-mail</string>
+    <string name="dialog_btn_enviar">Enviar</string>
+    <string name="dialog_btn_fechar">Fechar</string>
+
+
+    <!-- Recycler -->
+    <string name="recycler_titulo">Título</string>
+    <string name="recycler_descricao">Descrição</string>
+    <string name="recycler_toque_aqui">Toque aqui e saiba mais</string>
+
+</resources>
