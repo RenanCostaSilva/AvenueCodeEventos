@@ -1,5 +1,5 @@
 # AvenueCode
-[![NPM](https://github.com/RenanCostaSilva/TesteBNB_Desenv_Pleno_2023/blob/master/LICENSE)
+[![NPM](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/LICENSE)
 
 # Sobre o aplicativo
 Teste para a vaga de Engenheiro de Software para a AvenueCode - 20/09/2023
