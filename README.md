@@ -27,7 +27,7 @@ Teste para a vaga de Engenheiro de Software para a AvenueCode - 20/09/2023
    - Framework/Tecnologias:
    - 
      Devido ao tempo curto  de 24 para entregar o teste , os seguintes recusros foram deixados de lado:
-       - Injeção de Dependência  , LiveData/ViewModel , Teste com mock , push notificação (nativo) , Layout mais elaborado , Material Design
+       - Injeção de Dependência  , LiveData/ViewModel , Teste com mock , push notificação (nativo) , Layout mais elaborado , Material Design , Extensions , Util
        - 
      Posso implementa estes recursos , caso seja solicitado e eu tenha mais tempo para fazer.  
 
