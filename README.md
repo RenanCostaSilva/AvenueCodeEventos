@@ -1,8 +1,6 @@
 # AvenueCode
 [![NPM](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/LICENSE)
 
-# IMPORTANT
-
 # Sobre o aplicativo
 Teste para a vaga de Engenheiro de Software para a AvenueCode - 20/09/2023
 
@@ -14,6 +12,20 @@ Teste para a vaga de Engenheiro de Software para a AvenueCode - 20/09/2023
 ![mobile 5](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/5.png)
 ![mobile 6](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/6.png)
 ![mobile 7](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/7.png)
+
+# * IMPORTANT *
+ - No teste foi solicitado o range da api 19 para a última versão a Api 34. Infelizmente o Google "acabou" com o suporte para a a api 19 ano passado
+       então o SDk minimo e máximo  foi: 21 - 33. A api34 ainda não é padrão no Android estúdio.
+ - Java. Utilizei o Java JDK 17 com gradle 8.
+    Gradle 4 = Java 8 suporte
+    Gradle 7 = Java 11 suporte
+    Gradle 8 = Java 17 suporte
+    como a ultima versão do gradle so suporta java 17 e é default no Android studio , utilizei esta mesmo. CASO USO VERSÂO ANTERIOR , OCASIONARÁ ERRO.
+    Isto é padrão da google e da Intellij idea , não posso fazer nada fora disso.
+   - Framework/Tecnologias:
+     Devido ao tempo curto  de 24 para entregar o teste , os seguintes recusros foram deixados de lado:
+       - Injeção de Dependência  , LiveData/ViewModel , Teste com mock , push notificação (nativo) , Layout mais elaborado , Material Design
+     Posso implementa estes recursos , caso seja solicitado e eu tenha mais tempo para fazer.  
 
 ## SDK
 minSdk: 21 / alvo: 33
