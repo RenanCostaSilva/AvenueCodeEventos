@@ -48,14 +48,18 @@ dependencies {
     val gsonVersion = "2.10.1"
     val glideVersion = "4.16.0"
     val picassoVersion = "2.71828"
-    val multidexVersion = "2.0.1"
+    val okhttp3Version = "4.11.0"
+    val kxtVersion = "2.2.0"
+    val koinVersion = "3.4.0"
 
     // ViewModel and LiveData
     implementation("androidx.lifecycle:lifecycle-extensions:$livedataVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$kxtVersion")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofit2Version")
     implementation("com.squareup.retrofit2:converter-gson:$retrofit2Version")
+    implementation("com.squareup.okhttp3:logging-interceptor:$okhttp3Version")
 
     // Gson
     implementation("com.google.code.gson:gson:$gsonVersion")
@@ -66,6 +70,9 @@ dependencies {
     //Imagem
     implementation("com.squareup.picasso:picasso:$picassoVersion")
 
+    // Koin injection
+    implementation("io.insert-koin:koin-android:$koinVersion")
+    implementation("io.insert-koin:koin-core:$koinVersion")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
