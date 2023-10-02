@@ -7,7 +7,6 @@ import org.koin.dsl.module
 
 val vmModule = module {
 
-    // Provide MainActivityViewModel
     viewModel { MainViewModel(get()) }
     viewModel { DetalheViewModel(get()) }
 

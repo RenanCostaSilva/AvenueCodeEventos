@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import br.com.renancsdev.avenuecodeeventos.R
-import br.com.renancsdev.avenuecodeeventos.api.call.Resultado
+import br.com.renancsdev.avenuecodeeventos.api.sealed.Resultado
 import br.com.renancsdev.avenuecodeeventos.databinding.ActivityDetalheEventoBinding
 import br.com.renancsdev.avenuecodeeventos.databinding.DialogScreenAveneSetDataBinding
 import br.com.renancsdev.avenuecodeeventos.databinding.DialogScreenAvenueBinding
@@ -57,7 +57,7 @@ class DetalheEvento : AppCompatActivity() {
         }
     }
 
-    private fun viewModelResultado (resultado: Resultado<Evento?> , id: Int){
+    private fun viewModelResultado (resultado: Resultado<Evento?>, id: Int){
         when (resultado){
             is Resultado.Sucesso ->{
                 resultado.dado?.let {

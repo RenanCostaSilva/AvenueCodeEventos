@@ -5,15 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.renancsdev.avenuecodeeventos.api.call.CallEvento
-import br.com.renancsdev.avenuecodeeventos.api.call.CallEventoID
-import br.com.renancsdev.avenuecodeeventos.api.call.Resultado
+import br.com.renancsdev.avenuecodeeventos.api.sealed.Resultado
 import br.com.renancsdev.avenuecodeeventos.model.Evento
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Response
-import java.util.ArrayList
 
-class DetalheViewModel(private val api: CallEventoID): ViewModel() {
+class DetalheViewModel(private val api: CallEvento): ViewModel() {
 
     private val _eventoID = MutableLiveData<LiveData<Resultado<Evento?>>>()
     private val _checkIn = MutableLiveData<LiveData<Resultado<Evento?>>>()

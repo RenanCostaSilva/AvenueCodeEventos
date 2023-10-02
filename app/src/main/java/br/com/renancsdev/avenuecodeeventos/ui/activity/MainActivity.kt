@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.renancsdev.avenuecodeeventos.R
-import br.com.renancsdev.avenuecodeeventos.api.call.Resultado
+import br.com.renancsdev.avenuecodeeventos.api.sealed.Resultado
 import br.com.renancsdev.avenuecodeeventos.databinding.ActivityMainBinding
 import br.com.renancsdev.avenuecodeeventos.extension.esconder
 import br.com.renancsdev.avenuecodeeventos.model.Evento
