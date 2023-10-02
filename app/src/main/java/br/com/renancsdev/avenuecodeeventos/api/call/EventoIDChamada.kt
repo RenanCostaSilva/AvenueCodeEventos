@@ -24,6 +24,7 @@ import br.com.renancsdev.avenuecodeeventos.ui.activity.MainActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -113,7 +114,6 @@ class EventoIDChamada(var context: Context, var binding: ActivityDetalheEventoBi
         })
     }
 
-
     private fun showDialogInputDados(idEvento: Int) {
 
         val dialog = AlertDialog.Builder(context as Activity).create()
@@ -128,8 +128,8 @@ class EventoIDChamada(var context: Context, var binding: ActivityDetalheEventoBi
 
         val dialogBinding = DialogScreenAveneSetDataBinding.inflate(layoutInflater)
         dialogBinding.btnDialogDados.setOnClickListener {
-            nome = dialogBinding.editDialogDadosNome.text.toString()
-            email = dialogBinding.editDialogDadosEmail.text.toString()
+            nome = dialogBinding.tilDialogDadosNome.toString()
+            email = dialogBinding.tilDialogDadosEmail.toString()
             idEvent = id
 
             verificarEventoRetornoCheckIn()

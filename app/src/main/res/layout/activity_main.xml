@@ -30,13 +30,12 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <ProgressBar
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/pb_recycler_main"
-            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTint="#000000"
+            app:indicatorColor="@color/Avenue"
             app:layout_constraintBottom_toBottomOf="@+id/rv_evento_main"
             app:layout_constraintEnd_toEndOf="@+id/rv_evento_main"
             app:layout_constraintStart_toStartOf="@+id/rv_evento_main"

@@ -2,7 +2,6 @@ package br.com.renancsdev.avenuecodeeventos.ui.activity
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import br.com.renancsdev.avenuecodeeventos.R
-import br.com.renancsdev.avenuecodeeventos.api.call.EventoIDChamada
 import br.com.renancsdev.avenuecodeeventos.api.call.Resultado
 import br.com.renancsdev.avenuecodeeventos.databinding.ActivityDetalheEventoBinding
 import br.com.renancsdev.avenuecodeeventos.databinding.DialogScreenAveneSetDataBinding
@@ -24,6 +22,7 @@ import br.com.renancsdev.avenuecodeeventos.viewmodel.detalhe.DetalheViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -40,10 +39,6 @@ class DetalheEvento : AppCompatActivity() {
 
         inicializarLayout()
         setarBinding()
-
-        /*CoroutineScope(Dispatchers.IO).launch{
-            requisicaoAPI()
-        }*/
         buscarEventos()
 
     }
@@ -93,7 +88,7 @@ class DetalheEvento : AppCompatActivity() {
     }
     private fun eventoClickDialogCheckIn(id: Int){
         binding.btnEventCheckIn.setOnClickListener {
-            showDialogInputDados(id)
+            showDialogInputDadosMaterial3(id)
         }
     }
     //
@@ -114,29 +109,26 @@ class DetalheEvento : AppCompatActivity() {
 
 
     // Dialog de Input
-    private fun showDialogInputDados(idEvento: Int) {
+    private fun showDialogInputDadosMaterial3(idEvento: Int) {
 
-        val dialog = AlertDialog.Builder(context as Activity).create()
-        val inflater = (context as Activity).layoutInflater
-        val binding = dialogBindingCheckIn(dialog , inflater , idEvento)
-
-        dialog.setView(binding.root)
-        dialog.show()
+        var madb = MaterialAlertDialogBuilder(context).create()
+        madb.setView(dialogBindingCheckInMaterial3(madb , (context as Activity).layoutInflater , idEvento ).root)
+        madb.show()
 
     }
-    private fun dialogBindingCheckIn(dialog: AlertDialog, layoutInflater: LayoutInflater, id: Int): DialogScreenAveneSetDataBinding {
+    private fun dialogBindingCheckInMaterial3(madb: androidx.appcompat.app.AlertDialog, layoutInflater: LayoutInflater, id: Int): DialogScreenAveneSetDataBinding{
 
         val dialogBinding = DialogScreenAveneSetDataBinding.inflate(layoutInflater)
+
         dialogBinding.btnDialogDados.setOnClickListener {
 
-            if(dialogBinding.editDialogDadosNome.text.isNotEmpty() && dialogBinding.editDialogDadosEmail.text.isNotEmpty()){
-                fazerCheckInLiveData(dialogBinding.editDialogDadosNome.text.toString() , dialogBinding.editDialogDadosEmail.text.toString() , id)
+            if(dialogBinding.tilDialogDadosNome.editText?.text?.isNotEmpty() == true && dialogBinding.tilDialogDadosEmail.editText?.text?.isNotEmpty() == true ){
+                fazerCheckInLiveData(dialogBinding.tilDialogDadosNome.editText?.text.toString() , dialogBinding.tilDialogDadosEmail.editText?.text.toString() , id)
                 delay()
             }else{
                 "O seu nome e o e-mail são obrigatórios !".toastCurto(this@DetalheEvento)
             }
-
-            dialog.dismiss()
+            madb.dismiss()
         }
 
         return dialogBinding
