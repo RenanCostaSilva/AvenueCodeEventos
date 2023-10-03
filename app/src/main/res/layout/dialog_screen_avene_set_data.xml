@@ -82,13 +82,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/AvenueSecundary"
             android:text="@string/dialog_btn_enviar"
-            android:textSize="20sp"
             android:textColor="@color/white"
-            android:backgroundTint="@color/green"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/til_dialog_dados_email"
             app:layout_constraintTop_toBottomOf="@+id/til_dialog_dados_email"
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
