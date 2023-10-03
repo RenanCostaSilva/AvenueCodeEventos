@@ -2,8 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#16C119</color>
 
     <color name="Avenue">#000000</color>
+    <color name="AvenueSecundary">#353434</color>
     <color name="transparent">#00ffffff</color>
+
 
 </resources>

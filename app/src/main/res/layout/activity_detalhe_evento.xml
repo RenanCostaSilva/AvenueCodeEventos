@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="br.com.renancsdev.avenuecodeeventos.viewmodel.detalhe.DetalheViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,224 +25,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ProgressBar
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/pb_recycler_detalhe"
-            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:indeterminateTint="#000000"
+            app:indicatorColor="@color/Avenue"
             app:layout_constraintBottom_toBottomOf="@+id/detalhe_evento_wallpapper"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
+        <include
+            android:id="@+id/include_evento"
+            layout="@layout/include_card_info_detalhe_evento"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="bottom"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                tools:visibility="visible">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:visibility="visible">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            app:cardBackgroundColor="@color/transparent"
-                            app:cardElevation="0dp">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:id="@+id/detalhe_evento_thumb"
-                                    android:layout_width="150dp"
-                                    android:layout_height="150dp"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginBottom="8dp"
-                                    android:scaleType="fitXY"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/img404" />
-
-                                <LinearLayout
-                                    android:id="@+id/linearLayout3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginEnd="16dp"
-                                    android:orientation="vertical"
-                                    app:layout_constraintBottom_toBottomOf="@+id/detalhe_evento_thumb"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent">
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:layout_marginTop="16dp"
-                                        android:orientation="horizontal">
-
-                                        <ImageView
-                                            android:id="@+id/imageView2"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginRight="8dp"
-                                            app:srcCompat="@drawable/ic_money_black" />
-
-                                        <TextView
-                                            android:id="@+id/tv_item_evento_preco"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
-                                            android:text="@string/detalhe_evento_preco"
-                                            android:textSize="20sp" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginBottom="16dp"
-                                        android:orientation="horizontal">
-
-                                        <ImageView
-                                            android:id="@+id/imageView3"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginRight="8dp"
-                                            app:srcCompat="@drawable/ic_date_black" />
-
-                                        <TextView
-                                            android:id="@+id/tv_item_evento_data"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:text="@string/detalhe_evento_data"
-                                            android:textAlignment="viewEnd"
-                                            android:textSize="20sp" />
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:id="@+id/detalhe_evento_nome"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:text="@string/detalhe_evento"
-                                android:textAlignment="center"
-                                android:textColor="#000000"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/textView10"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:text="@string/detalhe_descricao"
-                                android:textColor="#000000"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/detalhe_evento_nome" />
-
-                            <androidx.core.widget.NestedScrollView
-                                android:id="@+id/nestedScrollView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="8dp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/textView10">
-
-                                <TextView
-                                    android:id="@+id/detalhe_evento_descricao"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="@string/detalhe_texto"
-                                    android:textColor="#000000" />
-                            </androidx.core.widget.NestedScrollView>
-
-                            <Button
-                                android:id="@+id/btn_event_checkIn"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:bufferType="normal"
-                                android:text="@string/detalhe_btn_fazercheckin"
-                                android:textColorHighlight="#FF5722"
-                                android:textColorLink="#FF5722"
-                                android:textSize="16sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
