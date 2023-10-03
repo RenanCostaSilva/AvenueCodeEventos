@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import br.com.renancsdev.avenuecodeeventos.R
 import br.com.renancsdev.avenuecodeeventos.databinding.ActivityIntroBinding
-import br.com.renancsdev.avenuecodeeventos.utils.Animacao
+import br.com.renancsdev.avenuecodeeventos.util.animacao.Animacao
 
 class Intro : AppCompatActivity() {
 

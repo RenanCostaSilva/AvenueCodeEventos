@@ -1,4 +1,4 @@
-package br.com.renancsdev.avenuecodeeventos.utils
+package br.com.renancsdev.avenuecodeeventos.util.navegacao
 
 import android.content.Context
 import android.content.Intent

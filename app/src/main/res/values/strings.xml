@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">AvenueCodeEventos</string>
 
+
+    <!-- DEV -->
+    <string name="dev_by">Desenvolvido por : Renan Costa e Silva</string>
+
+    <!-- Imagem -->
+    <string name="imagem_description">imagem app</string>
+
+    <!-- Dialog -->
+    <string name="dialog_mensagem">mensagem</string>
+
     <!-- Detalhe -->
     <string name="detalhe_evento">Evento</string>
     <string name="detalhe_descricao">Descrição</string>

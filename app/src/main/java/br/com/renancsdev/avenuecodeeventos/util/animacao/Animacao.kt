@@ -1,11 +1,10 @@
-package br.com.renancsdev.avenuecodeeventos.utils
+package br.com.renancsdev.avenuecodeeventos.util.animacao
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import androidx.appcompat.app.AppCompatActivity
 import br.com.renancsdev.avenuecodeeventos.R
 import br.com.renancsdev.avenuecodeeventos.ui.activity.MainActivity
 

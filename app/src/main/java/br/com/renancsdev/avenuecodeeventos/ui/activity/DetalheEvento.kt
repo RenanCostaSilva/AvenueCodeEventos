@@ -8,16 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import br.com.renancsdev.avenuecodeeventos.R
 import br.com.renancsdev.avenuecodeeventos.api.sealed.Resultado
 import br.com.renancsdev.avenuecodeeventos.databinding.ActivityDetalheEventoBinding
 import br.com.renancsdev.avenuecodeeventos.databinding.DialogScreenAveneSetDataBinding
 import br.com.renancsdev.avenuecodeeventos.databinding.DialogScreenAvenueBinding
+import br.com.renancsdev.avenuecodeeventos.extension.paraTexto
 import br.com.renancsdev.avenuecodeeventos.extension.toastCurto
 import br.com.renancsdev.avenuecodeeventos.model.Evento
-import br.com.renancsdev.avenuecodeeventos.utils.Redirecionar
+import br.com.renancsdev.avenuecodeeventos.util.navegacao.Redirecionar
+import br.com.renancsdev.avenuecodeeventos.util.validacao.Valida
 import br.com.renancsdev.avenuecodeeventos.viewmodel.detalhe.DetalheViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -31,7 +32,6 @@ class DetalheEvento : AppCompatActivity() {
     private lateinit var  binding: ActivityDetalheEventoBinding
     private val viewModel by viewModel<DetalheViewModel>()
     private var context = this@DetalheEvento
-    private var activity = context as Activity
     private val layoutDetalhe = R.layout.activity_detalhe_evento
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +62,7 @@ class DetalheEvento : AppCompatActivity() {
             is Resultado.Sucesso ->{
                 resultado.dado?.let {
                     exibirImagemComGlide(resultado.dado.image , binding.detalheEventoWallpapper)
-                    exibirImagemComGlide(resultado.dado.image , binding.detalheEventoThumb)
+                    exibirImagemComGlide(resultado.dado.image , binding.includeEvento.detalheEventoThumb)
                     exibirDado(resultado.dado)
                     eventoClickDialogCheckIn(id)
                     binding.pbRecyclerDetalhe.visibility = View.GONE
@@ -83,11 +83,11 @@ class DetalheEvento : AppCompatActivity() {
             .into(imagem)
     }
     private fun exibirDado(evento: Evento){
-        binding.detalheEventoNome.text = evento.title
-        binding.detalheEventoDescricao.text = evento.description
+        binding.includeEvento.detalheEventoNome.text = evento.title
+        binding.includeEvento.detalheEventoDescricao.text = evento.description
     }
     private fun eventoClickDialogCheckIn(id: Int){
-        binding.btnEventCheckIn.setOnClickListener {
+        binding.includeEvento.btnEventCheckIn.setOnClickListener {
             showDialogInputDadosMaterial3(id)
         }
     }
@@ -97,7 +97,7 @@ class DetalheEvento : AppCompatActivity() {
     private fun viewModelResultadoCheckIn (resultado: Resultado<Evento?>){
         when (resultado){
             is Resultado.Sucesso ->{
-                showDialogSucess("Cadastrado no evento com sucesso !.\n\nAquarde , redirecionando . . .")
+                showDialogSucess("Cadastrado no evento com sucesso !.")
                 true
             }
             is Resultado.Erro -> {
@@ -111,7 +111,8 @@ class DetalheEvento : AppCompatActivity() {
     // Dialog de Input
     private fun showDialogInputDadosMaterial3(idEvento: Int) {
 
-        var madb = MaterialAlertDialogBuilder(context).create()
+
+        val madb = MaterialAlertDialogBuilder(context).create()
         madb.setView(dialogBindingCheckInMaterial3(madb , (context as Activity).layoutInflater , idEvento ).root)
         madb.show()
 
@@ -122,12 +123,11 @@ class DetalheEvento : AppCompatActivity() {
 
         dialogBinding.btnDialogDados.setOnClickListener {
 
-            if(dialogBinding.tilDialogDadosNome.editText?.text?.isNotEmpty() == true && dialogBinding.tilDialogDadosEmail.editText?.text?.isNotEmpty() == true ){
-                fazerCheckInLiveData(dialogBinding.tilDialogDadosNome.editText?.text.toString() , dialogBinding.tilDialogDadosEmail.editText?.text.toString() , id)
+            if(Valida().validaformulario(this@DetalheEvento , dialogBinding)){
+                fazerCheckInLiveData(dialogBinding.tilDialogDadosNome.paraTexto() , dialogBinding.tilDialogDadosEmail.paraTexto() , id)
                 delay()
-            }else{
-                "O seu nome e o e-mail são obrigatórios !".toastCurto(this@DetalheEvento)
             }
+
             madb.dismiss()
         }
 
@@ -150,7 +150,7 @@ class DetalheEvento : AppCompatActivity() {
     private fun dialogBindingSucess(dialog: AlertDialog , layoutInflater: LayoutInflater , mensagem: String): DialogScreenAvenueBinding {
 
         val dialogBinding = DialogScreenAvenueBinding.inflate(layoutInflater)
-        dialogBinding.imgDialogTipoMensagem.setImageDrawable(ResourcesCompat.getDrawable(context.resources , R.drawable.ic_check_green , null))
+        dialogBinding.tvDialogMsg.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_check_green , 0 , 0 , 0)
 
         dialogBinding.btnFecharDialog.setOnClickListener {
             dialog.dismiss()
@@ -173,7 +173,7 @@ class DetalheEvento : AppCompatActivity() {
     private fun dialogBindingError(dialog: AlertDialog , layoutInflater: LayoutInflater , mensagem: String): DialogScreenAvenueBinding {
 
         val dialogBinding = DialogScreenAvenueBinding.inflate(layoutInflater)
-        dialogBinding.imgDialogTipoMensagem.setImageDrawable(ResourcesCompat.getDrawable(context.resources , R.drawable.ic_error_red , null))
+        dialogBinding.tvDialogMsg.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_error_red , 0 , 0 , 0)
 
         dialogBinding.btnFecharDialog.setOnClickListener {
             dialog.dismiss()
