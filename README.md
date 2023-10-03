@@ -4,6 +4,11 @@
 # Sobre o aplicativo
 Teste para a vaga de Engenheiro de Software para a AvenueCode - 20/09/2023
 
+
+## Update - 03_10_2023
+1.0 para 1.4 , mais info visite as branches
+
+
 ## Imagens da Aplicação
 ![mobile 1](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/1.png)
 ![mobile 2](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/2.png)
@@ -12,6 +17,11 @@ Teste para a vaga de Engenheiro de Software para a AvenueCode - 20/09/2023
 ![mobile 5](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/5.png)
 ![mobile 6](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/6.png)
 ![mobile 7](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/7.png)
+![mobile 8](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/8.png)
+![mobile 9](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/9.png)
+![mobile 10](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/10.png)
+![mobile 11](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/11.png)
+![mobile 12](https://github.com/RenanCostaSilva/AvenueCodeEventos/blob/master/12.png)
 
 # * IMPORTANT *
  - No teste foi solicitado o range da api 19 para a última versão a Api 34. Infelizmente o Google "acabou" com o suporte para a a api 19 ano passado
